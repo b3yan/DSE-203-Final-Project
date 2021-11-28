@@ -1,0 +1,21 @@
+BACKGROUND:
+Sample Nodes:
+recipe_list
+
+
+READ:
+1) Create Tasty API account, subscribe in pricing, and generate python code for get/recipes/list and get/recipes/detail or download all files from (google drive link).
+2) Run process_tasty.py to convert json to csv files.
+3) Create neo4j database and change settings/configuration with the following:
+dbms.memory.heap.initial_size=30G
+dbms.memory.heap.max_size=30G 
+dbms.memory.pagecache.size=1G
+4) Run edit_tasty.ipynb to edit certain columns from csv files.
+5) Import csv files in neo4j database import folder and run following neo4j cypher in browser:
+#Create Recipe List Nodes
+CREATE CONSTRAINT recipelistIdConstraint ON (recipelist:RecipeList) ASSERT recipelist.id IS UNIQUE
+:auto USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM "file:///tasty_response_list.csv" AS csvLine
+CREATE (rl:RecipeList {})
+
+#Create Recipe Detail Nodes
