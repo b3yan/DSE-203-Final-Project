@@ -1,0 +1,100 @@
+
+match (n) return n
+
+---------------------------------------------
+How to reset / clear / delete neo4j database?
+---------------------------------------------
+match (a) -[r] -> () delete a, r
+
+match (a) delete a
+
+---------------------------------------------
+Init graph configuration
+---------------------------------------------
+
+CALL n10s.graphconfig.init();
+
+-------------------
+Load XML
+-------------------
+/Users/boyan/Documents/DSE 203/203 data source/ingredient.xml
+
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/recipe.xml","RDF/XML");
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/foodon.xml","RDF/XML");
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/ingredient.xml","RDF/XML");
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/recipes.xml","RDF/XML");
+CALL n10s.onto.import.fetch("file:///Users/boyan/Documents/DSE 203/untitled-ontology-9","RDF/XML");
+CALL n10s.onto.import.fetch("file:///Users/boyan/Documents/DSE 203/203 data source/ingredient.xml","RDF/XML");
+
+
+-------------------
+Load RDF
+-------------------
+
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/untitled-ontology-9","RDF/XML");
+
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/foodon","RDF/XML");
+
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/DSE-203-Final-Project-master/Datasets/foodon","RDF/XML");
+
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/WhatToMake_Individuals_Ingredient.rdf","RDF/XML");
+
+CALL n10s.onto.import.fetch("https://raw.githubusercontent.com/foodkg/foodkg.github.io/master/ontologies/WhatToMake.rdf","RDF/XML");
+
+https://raw.githubusercontent.com/foodkg/foodkg.github.io/master/ontologies/WhatToMake.rdf
+
+-------------------
+Load TTL
+-------------------
+
+CALL n10s.onto.import.fetch("file:///Users/boyan/Downloads/1.1.ttl","Turtle");
+
+-------------------
+Load CSV
+-------------------
+
+LOAD CSV FROM "file:///recipe_title.csv" AS row
+RETURN row
+LIMIT 8;
+
+/Users/boyan/Downloads/foodimportcsv/2-recipes.csv
+
+
+https://raw.githubusercontent.com/Michelebradley/DATA_607_HW/master/GraphDatabase/titles.csv
+
+LOAD CSV FROM "file:///ingredients.csv" AS row
+RETURN row
+LIMIT 8;
+
+https://raw.githubusercontent.com/Michelebradley/DATA_607_HW/master/GraphDatabase/ingredients.csv
+
+LOAD CSV FROM "file:///Users/boyan/Documents/DSE 203/ingredients.csv" AS row
+RETURN row
+LIMIT 8;
+
+LOAD CSV FROM "file:///Users/boyan/Documents/DSE 203/recipe_list.csv" AS row
+RETURN row
+LIMIT 8;
+
+-------------------
+Load JSON
+-------------------
+
+WITH "https://github.com/b3yan/DSE-203-Final-Project/blob/master/Datasets/train.json" as url 
+CALL apoc.load.json(url) YIELD value 
+UNWIND keys(value) AS key
+RETURN key, apoc.meta.type(value[key]);
+
+WITH "https://api.stackexchange.com/2.2/questions?pagesize=100&order=desc&sort=creation&tagged=neo4j&site=stackoverflow&filter=!5-i6Zw8Y)4W7vpy91PMYsKM-k9yzEsSC1_Uxlf" AS url
+CALL apoc.load.json(url) YIELD value
+UNWIND value.items AS item
+RETURN item.title, item.owner, item.creation_date, keys(item)
+
+https://github.com/b3yan/DSE-203-Final-Project/blob/master/Datasets/train.json
+
+https://raw.githubusercontent.com/tabatkins/recipe-db/master/db-recipes.json
+
+CALL apoc.load.json("https://raw.githubusercontent.com/tabatkins/recipe-db/master/db-recipes.json")
+YIELD value
+RETURN value;
+
