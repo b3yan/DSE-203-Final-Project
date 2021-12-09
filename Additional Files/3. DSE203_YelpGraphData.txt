@@ -1,0 +1,79 @@
+BACKGROUND:
+Sample Nodes:
+business
+reviews
+users
+photos
+tip
+
+Sample Relationships:
+REVIEWS_TO_BUSINESS: business_id equal (review->business)
+USERS_TO_REVIEWS: user_id equal (user->review)
+PHOTOS_TO_BUSINESS: business_id equal (photo->business)
+TIPS_TO_BUSINESS: business_id equal (tip->business)
+USERS_TO_TIPS: user_id equal (user->tip)
+
+READ:
+1) Download all files from https://drive.google.com/drive/folders/19XwgwG0o1KMyyqeKV9BB9d8oTWPfb6_c.
+2) Run process_yelp.py to convert json to csv files.
+3) Create neo4j database and change settings/configuration with the following:
+dbms.memory.heap.initial_size=30G
+dbms.memory.heap.max_size=30G 
+dbms.memory.pagecache.size=1G
+4) Run edit_yelp.ipynb to edit certain columns from csv files.
+5) Import csv files in neo4j database import folder and run following neo4j cypher in browser:
+#Create Business Nodes
+CREATE CONSTRAINT businessIdConstraint ON (business:Business) ASSERT business.id IS UNIQUE
+:auto USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM "file:///yelp_academic_dataset_business.csv" AS csvLine
+CREATE (b:Business {business_id: csvLine.business_id, name: csvLine.name, address: csvLine.address, city: csvLine.city, state: csvLine.state, postal_code: toInteger(csvLine.postal_code), latitude: toFloat(csvLine.latitude), longitude: toFloat(csvLine.longitude), stars: toFloat(csvLine.stars), review_count: toInteger(csvLine.review_count), is_open: toBoolean(csvLine.is_open), attributes: csvLine.attributes, categories: csvLine.categories, hours: csvLine.hours})
+
+#Create Reviews Nodes
+CREATE CONSTRAINT reviewsIdConstraint ON (reviews:Reviews) ASSERT reviews.id IS UNIQUE
+:auto USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM "file:///yelp_academic_dataset_review.csv" AS csvLine
+CREATE (r:Reviews {review_id: csvLine.review_id, user_id: csvLine.user_id, business_id: csvLine.business_id, stars: toFloat(csvLine.stars), useful: toInteger(csvLine.useful), funny: toInteger(csvLine.funny), cool: toInteger(csvLine.cool), date: csvLine.date})
+
+#Create Users Nodes
+CREATE CONSTRAINT usersIdConstraint ON (users:Users) ASSERT users.id IS UNIQUE
+:auto USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM "file:///yelp_academic_dataset_user.csv" AS csvLine
+CREATE (u:Users {user_id: csvLine.user_id, name: csvLine.name, review_count: toInteger(csvLine.review_count), yelping_since: csvLine.yelping_since, useful: toInteger(csvLine.useful), funny: toInteger(csvLine.funny), cool: toInteger(csvLine.cool), fans: toInteger(csvLine.fans), average_stars: toFloat(csvLine.average_stars), compliment_hot: toInteger(csvLine.compliment_hot), compliment_more: toInteger(csvLine.compliment_more), compliment_profile: toInteger(csvLine.compliment_profile), compliment_cute: toInteger(csvLine.compliment_cute), compliment_list: toInteger(csvLine.compliment_list), compliment_note: toInteger(csvLine.compliment_note), compliment_plain: toInteger(csvLine.compliment_plain), compliment_cool: toInteger(csvLine.compliment_cool), compliment_funny: toInteger(csvLine.compliment_funny), compliment_writer: toInteger(csvLine.compliment_writer), compliment_photos: toInteger(csvLine.compliment_photos)})
+
+#Create Photos Nodes
+CREATE CONSTRAINT photosIdConstraint ON (photos:Photos) ASSERT photos.id IS UNIQUE
+:auto USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM "file:///yelp_academic_dataset_photos.csv" AS csvLine
+CREATE (p:Photos {photo_id: csvLine.photo_id, business_id: csvLine.business_id, caption: csvLine.caption, label: csvLine.label})
+
+#Create Tips Nodes
+CREATE CONSTRAINT tipsIdConstraint ON (tips:Tips) ASSERT tips.id IS UNIQUE
+:auto USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM "file:///yelp_academic_dataset_tip.csv" AS csvLine
+CREATE (t:Tips {user_id: csvLine.user_id, business_id: csvLine.business_id, text: csvLine.text, date: csvLine.date, compliment_count: toInteger(csvLine.compliment_count)})
+
+
+#Create REVIEWS to BUSINESS Relationship
+MATCH (rr:Reviews), (b:Business)
+WHERE rr.business_id=b.business_id
+CREATE (rr)-[:REVIEWS_TO_BUSINESS]->(b)
+
+#Create USERS to REVIEWS Relationship
+MATCH (uu:Users), (r:Reviews)
+WHERE uu.user_id=r.user_id
+CREATE (uu)-[:USERS_TO_REVIEWS]->(r)
+
+#Create PHOTOS to BUSINESS Relationship
+MATCH (pp:Photos), (b:Business)
+WHERE pp.business_id=b.business_id
+CREATE (pp)-[:PHOTOS_TO_BUSINESS]->(b)
+
+#Create TIPS to BUSINESS Relationship
+MATCH (tt:Tips), (b:Business)
+WHERE tt.business_id=b.business_id
+CREATE (tt)-[:TIPS_TO_BUSINESS]->(b)
+
+#Create USERS to TIPS Relationship
+MATCH (uu:Users), (t:Tips)
+WHERE uu.user_id=t.user_id
+CREATE (uu)-[:USERS_TO_TIPS]->(t)
