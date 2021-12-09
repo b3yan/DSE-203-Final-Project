@@ -1,0 +1,174 @@
+,Ingredient_ID,Ingredient_Name,Ingredient_Num_Measurement,Ingredient_Unit_Measurement
+0,1,Warm Water,0.75,cup
+1,2,Yeast,1.0,tsp
+2,3,Sugar,1.0,tsp
+3,4,All Purpose Flour,2.0,cup
+4,5,Whole Wheat Flour,1.0,cup
+5,6,Salt,1.0,tsp
+6,7,Baking Powder,0.75,tsp
+7,8,Yogurt,3.0,Tbsp
+8,9,Oil,2.0,Tbsp
+9,10,All Purpose Flour,2.0,cup
+10,11,Salt,1.0,tsp
+11,12,Baking Powder,0.25,tsp
+12,13,Cold Butter,0.25,cup
+13,14,Warm Water,0.66,cup
+14,15,Bananas,2.0,whole
+15,16,Sugar,3.0,Tbsp
+16,17,Oil,1.0,Tbsp
+17,18,Chia Seeds,1.0,tsp
+18,19,Salt,0.5,tsp
+19,20,Vanila,1.0,tsp
+20,21,Nut Milk,2.0,cup
+21,22,Whole Wheat Flour,2.0,cup
+22,23,Baking Powder,1.0,tbsp
+23,24,Whole Wheat Flour,1.0,cup
+24,25,Brown Sugar,2.5,Tbsp
+25,26,Baking Powder,1.0,tsp
+26,27,Salt,0.25,tsp
+27,28,Cinnamon,0.5,tsp
+28,29,Nut Milk,1.0,cup
+29,30,Vinegar,2.0,Tbsp
+30,31,Oil,1.0,Tbsp
+31,32,Chia Seeds,1.0,Tbsp
+32,33,Vanilla Extract,1.0,tsp
+33,34,Apple,1.0,whole
+34,35,Whole Wheat Pastry Flour,1.0,cup
+35,36,Salt,0.5,tsp
+36,37,Egg,3.0,whole
+37,38,Milk,1.0,cup
+38,39,Butter,1.0,Tbsp
+39,40,Whole Wheat Pastry Flour,2.0,cup
+40,41,Baking Powder,1.0,tsp
+41,42,Baking Soda,0.5,tsp
+42,43,Salt,1.0,tsp
+43,44,Sugar,3.0,Tbsp
+44,45,Egg,2.0,whole
+45,46,Nut Milk,2.0,cup
+46,47,Vinegar,2.0,Tbsp
+47,48,Butter,2.0,Tbsp
+48,49,Oil,1.5,Tbsp
+49,50,Onion,1.0,small
+50,51,Peppers,2.0,small
+51,52,Jalapeno,1.0,small
+52,53,Garlic,2.0,cloves
+53,54,Paprika,1.0,Tbsp
+54,55,Cumin,1.0,tsp
+55,56,Can Whole Tomatoes,14.0,oz
+56,57,Salt,,pinch
+57,58,Pepper,,pinch
+58,59,Parsley,0.25,bunch
+59,60,Egg,3.0,whole
+60,61,Soy Sauce,6.0,Tbsp
+61,62,Peanut Butter,1.0,Tbsp
+62,63,Cumin,1.0,tsp
+63,64,Black Pepper,0.5,tsp
+64,65,Garlic,1.0,clove
+65,66,Chili Flakes,1.0,tsp
+66,67,Tofu,14.0,oz
+67,68,Kidney Beans,2.0,cups
+68,69,TVP,1.0,cup
+69,70,Bay Leaves,2.0,whole
+70,71,Onion,2.0,small
+71,72,Jalapeno,1.0,small
+72,73,Garlic,5.0,cloves
+73,74,Chili Flakes,1.0,Tbsp
+74,75,Coriander,2.0,tsp
+75,76,Cumin,2.0,tsp
+76,77,Can Whole Tomatoes,28.0,oz
+77,78,Salt,1.0,pinch
+78,79,Salmon Head,1.0,head
+79,80,Ginger,3.0,inches
+80,81,Garlic,10.0,cloves
+81,82,Vinegar,1.0,cup
+82,83,Water,1.0,cup
+83,84,Soy Sauce,3.0,tsp
+84,85,pepper,1.0,pinch
+85,86,salt,1.0,pinch
+86,87,Bay Leaves,2.0,whole
+87,88,Parsley,2.0,cup
+88,89,Oregano,2.0,Tbsp
+89,90,Cumin,0.75,tsp
+90,91,Chili Flakes,0.25,tsp
+91,92,Garlic,5.0,cloves
+92,93,Oil,0.2,cup
+93,94,Halibut,5.0,fillets
+94,95,Bread Flour,1.5,cup
+95,96,Salt,0.25,tsp
+96,97,Water,0.5,cup
+97,98,Tofu Ground Beef,14.0,oz
+98,99,Oil,1.0,Tbsp
+99,100,Coriander,2.0,tsp
+100,101,Cumin,1.5,tbsp
+101,102,Black Pepper,0.25,tsp
+102,103,Ginger,1.0,inch
+103,104,Scallions,2.0,small
+104,105,Garlic,7.0,cloves
+105,106,Chili Pepper,1.0,small
+106,107,Chili Oil,3.0,Tbsp
+107,108,Sugar,1.0,tsp
+108,109,Vinegar,1.0,tsp
+109,110,Soy Sauce,1.0,Tbsp
+110,111,Salt,0.5,tsp
+111,112,Onion,1.0,small
+112,113,Celery,0.5,cup
+113,114,Napa Cabbage,1.0,head
+114,115,Kabocha Squash,1.0,whole
+115,116,Chickpeas,2.0,cup
+116,117,Okra,1.0,cup
+117,118,Long Beans,1.0,cup
+118,119,Coconut Milk,1.0,cup
+119,120,Onion,1.0,small
+120,121,Garlic,3.0,cloves
+121,122,Cumin,1.0,tsp
+122,123,Coriander,1.0,tsp
+123,124,Turmeric,1.0,tsp
+124,125,Salt,1.0,pinch
+125,126,Pepper,1.0,pinch
+126,127,Chinese Eggplant,4.0,whole
+127,128,Spagetti,1.0,bunch
+128,129,Raos Tomato Sauce,1.0,bottle
+129,130,Onion,1.0,whole
+130,131,Garlic,5.0,cloves
+131,132,Chinese Eggplant,4.0,whole
+132,133,Eggs,6.0,whole
+133,134,Onion,1.0,small
+134,135,Garlic,3.0,cloves
+135,136,Tofu,14.0,oz
+136,137,Soy Sauce,1.0,Tbsp
+137,138,Coriander,1.0,tsp
+138,139,Cumin,1.0,tsp
+139,140,Napa Cabbage,1.0,head
+140,141,Kale,1.0,bunch
+141,142,Spagetti,1.0,bunch
+142,143,Eggs,2.0,whole
+143,144,Lime,1.0,Tbsp
+144,145,Adzuki Beans,3.0,cups
+145,146,Dates,8.0,whole
+146,147,Vanilla Extract,2.0,tsp
+147,148,Cocoa Powder,0.66,cup
+148,149,Coconut Oil,8.0,Tbsp
+149,150,Egg,4.0,whole
+150,151,Chocolate,8.0,squares
+151,152,Brown Sugar,0.25,cup
+152,153,Whole Wheat Pastry Flour,2.0,cup
+153,154,Baking Powder,2.0,tsp
+154,155,Baking Soda,0.25,tsp
+155,156,Salt,0.25,tsp
+156,157,Cinnamon,1.0,tsp
+157,158,Coconut Oil,0.3,cup
+158,159,Apple,1.0,cup
+159,160,Nut Milk,0.5,cup
+160,161,Raisins,0.5,cup
+161,162,Carrot,1.0,cup
+162,163,All Purpose Flour,2.0,cup
+163,164,Baking Soda,2.0,tsp
+164,165,Ground Ginger,2.5,tsp
+165,166,Cinnamon,1.0,tsp
+166,167,Cloves,1.0,tsp
+167,168,Salt,1.0,tsp
+168,169,Butter,0.5,cup
+169,170,Coconut Oil,0.25,cup
+170,171,Brown Sugar,1.0,cup
+171,172,Egg,1.0,whole
+172,173,Molasses,0.25,cup
