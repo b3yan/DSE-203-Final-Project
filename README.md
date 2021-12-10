@@ -1,8 +1,14 @@
 # Find Your Food
 
-Our Find Your Food project builds a comprehensive and easily accessible ontology about food, recipes, ingredients, restaurants as well as the diets, menus, seasons and occasions users may be suitable for. 
+### Our Find Your Food project builds a comprehensive and easily accessible ontology about food, recipes, ingredients, restaurants as well as the diets, menus, seasons and occasions users may be suitable for. 
 
-FoodOn is initially based on a conversion of the LanguaL.org food indexing thesaurus, integrated with OBOFoundry ontology terms from UBERON, ChEBI, and NCBITaxon and others.
+### We created a simple lightweight ontology that uses the shared terminology for types, properties and relationships about food concepts, and thus can help users to find the proper food.
+
+
+## Demo Graph
+
+
+
 
 
 
