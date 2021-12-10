@@ -2,6 +2,7 @@ Our Find Your Food project builds a comprehensive and easily accessible ontology
 
 FoodOn is initially based on a conversion of the LanguaL.org food indexing thesaurus, integrated with OBOFoundry ontology terms from UBERON, ChEBI, and NCBITaxon and others.
 
+https://github.com/b3yan/DSE-203-Final-Project/blob/master/Images/1.%20Data%20Source.png
 
 Contact Us:
 Adelle Driker: adriker@ucsd.edu
