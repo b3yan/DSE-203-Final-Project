@@ -15,7 +15,7 @@
 ![2  Data Integration Challenges](https://user-images.githubusercontent.com/71803935/145517690-89dab30a-8fcb-4ef0-87d2-3ce934de4149.png)
 
 ## Approach
-![3  Approach](https://user-images.githubusercontent.com/71803935/145517691-7f36b3db-ae5a-41f3-af62-86d236992a43.png)
+![3  Approach](https://user-images.githubusercontent.com/71803935/145519788-b8e77e1b-c60e-4172-84a4-09ec48159cf6.png)
 
 ## Contact Us:
 ### Adelle Driker: adriker@ucsd.edu
